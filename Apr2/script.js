@@ -39,24 +39,23 @@
 //     c:20
 //   }
 // }
+ let obj = ["dfgdfgf",5465454,{fgfg:"fgsfg"}]
+const deepClone = (obj)=>{
+  const type = typeof obj;
+  if(type !== "object" || !obj )
+  return obj;
 
-// const deepClone = (obj)=>{
-//   const type = typeof obj;
-//   if(type !== "object" || !obj )
-//   return obj;
-//   let arrObj = Object.entries(obj);
-//   let deepCloneArrObj =  arrObj.map(([key,value])=>
-//     ([key,deepClone(value)]))
-// ;
-//   return Object.fromEntries(deepCloneArrObj)
-// }
-// console.log(deepClone(obj)) 
-
-
-let obj ={
-  abc(){
-    console.log(this);
+  if(Array.isArray(obj)){
+    return obj.map((item)=>deepClone(item))
   }
+  let arrObj = Object.entries(obj);
+  let deepCloneArrObj =  arrObj.map(([key,value])=>
+    ([key,deepClone(value)]))
+;
+  return Object.fromEntries(deepCloneArrObj)
 }
-obj.abc()
+console.log(deepClone(obj)) 
+
+
+
 
