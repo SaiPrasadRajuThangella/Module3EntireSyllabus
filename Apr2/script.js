@@ -39,23 +39,83 @@
 //     c:20
 //   }
 // }
- let obj = ["dfgdfgf",5465454,{fgfg:"fgsfg"}]
-const deepClone = (obj)=>{
-  const type = typeof obj;
-  if(type !== "object" || !obj )
-  return obj;
+//  let obj = ["dfgdfgf",5465454,{fgfg:"fgsfg"}]
+// const deepClone = (obj)=>{
+//   const type = typeof obj;
+//   if(type !== "object" || !obj )
+//   return obj;
 
-  if(Array.isArray(obj)){
-    return obj.map((item)=>deepClone(item))
-  }
-  let arrObj = Object.entries(obj);
-  let deepCloneArrObj =  arrObj.map(([key,value])=>
-    ([key,deepClone(value)]))
-;
-  return Object.fromEntries(deepCloneArrObj)
+//   if(Array.isArray(obj)){
+//     return obj.map((item)=>deepClone(item))
+//   }
+//   let arrObj = Object.entries(obj);
+//   let deepCloneArrObj =  arrObj.map(([key,value])=>
+//     ([key,deepClone(value)]))
+// ;
+//   return Object.fromEntries(deepCloneArrObj)
+// }
+// console.log(deepClone(obj))
+
+
+// call method-------------------------------------------------------------
+
+let obj = {
+  a: 10,
+};
+function abc() {
+  console.log(this);
 }
-console.log(deepClone(obj)) 
+
+abc.call(obj);
+// ---------------------------------------
+let objj = {
+  a : 10,
+   abcc() {
+    console.log(this);
+  },
+};
+
+objj.abcc();
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var salary = 20002020
+
+
+// function getSalary() {
+//   console.log(this.salary)
+  
+  
+// }
+
+// employee= {
+//   salary : 1211223
+// }
+// employee2= {
+//   salary : 7258567
+// }
+
+// getSalary.call(employee) 
+// getSalary.call(employee2)
