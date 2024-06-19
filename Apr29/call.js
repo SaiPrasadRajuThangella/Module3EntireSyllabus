@@ -64,78 +64,25 @@
 // console.log(printName.apply(person,[20,50]))
 
 // bind polyfill-----------------------------------------------------------------------------------------
-let obj = {
-  a:10
-}
 
-function sum(a,b){
-  console.log(this)
-  return 
-}
-Function.prototype.mybind = function(obj,...args){
-    const oldFn = this;
-    const newFn = function(...nonFixedArgs);
+// let obj = {
+//   a: 10,
+//   b: 20,
+// };
 
+// function sum(arg1, arg2) {
+// //   console.log(this)
+//   return arg1 + arg2;
+// }
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function old(...args){
-//   console.log(args)
-//   return "hello"
+// Function.prototype.mybind = function(obj,...args1) {
+//   let ogFn = this;
   
-// }
+//   return function (...args2) {
+//     return ogFn.call(obj, ...args1, ...args2);
+//   };
+// };
 
-// function newf(...args){
-//   return old(...args)
-// }
-
-// console.log(newf(1,2,3))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log(sum.mybind(obj,10,20)());
+// console.log(sum.bind(obj,10,20)());
 
